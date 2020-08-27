@@ -1,0 +1,131 @@
+{
+	"art": {
+		"exhibitions": [
+			{
+				"event": "ACUD Macht Neu (Group Show: Berlin, DE)",
+				"work": "Vorspiel Opening",
+				"year": 2019
+			},
+			{
+				"event": "GlogauAIR as part of Vorspiel and Transmediale (Solo Show: Berlin, DE)",
+				"work": "Virtual Affects",
+				"year": 2019
+			},
+			{
+				"event": "GlogauAIR Open Studios (Group Show: Berlin, DE)",
+				"work": "",
+				"year": 2018
+			},
+			{
+				"event": "Signal Flow Festival (Group Show: Mills College, Oakland, CA, USA)",
+				"work": "findnewfriends.exe",
+				"year": 2018
+			},
+			{
+				"event": "California Electronic Music Exchange Concerts (Group Show: Stanford University)",
+				"work": "findnewfriends.exe",
+				"year": 2018
+			},
+			{
+				"event": "Slide Space 123 (Solo Show: Oakland, CA, USA)",
+				"work": "findnewfriends.exe",
+				"year": 2017
+			},
+			{
+				"event": "Slide Space 123 (Group Show: Oakland, CA, USA)",
+				"work": "_.world",
+				"year": 2017
+			},
+			{
+				"event": "Holmgren Meadow (Solo Show: Mills College, Oakland, CA, USA)",
+				"work": "campfires",
+				"year": 2016
+			}
+		],
+		"performances": [
+			{
+				"event": "Spektrum (Berlin, DE)",
+				"work": "pls don't(!) silence ur cellphones",
+				"year": 2018
+			},
+			{
+				"event": "Signal Flow Festival (Mills College, Oakland, CA, USA)",
+				"work": "pls don't(!) silence ur cellphones",
+				"year": 2018
+			},
+			{
+				"event": "California Electronic Music Exchange Concerts (Mills College and UCSC)",
+				"work": "empty patterns",
+				"year": 2018
+			},
+			{
+				"event": "California Electronic Music Exchange Concerts (Mills College and UCSB)",
+				"work": "light(rain)",
+				"year": 2017
+			},
+			{
+				"event": "FEASt FEST (Florida International University School of Music)",
+				"work": "Fanfare in C",
+				"year": 2016
+			}
+		],
+		"residencies": [
+			{
+				"name": "GlogauAIR (Berlin, DE)",
+				"year": 2018
+			}
+		],
+		"awards": [
+			{
+				"name": "Margaret Lyon Music Student Prize (Mills College, Oakland, CA, USA)",
+				"year": 2018
+			},
+			{
+				"name": "Composition Workshop with Ashley Fure (Mills College, Oakland, CA, USA)",
+				"year": 2018
+			},
+			{
+				"name": "Composition Workshop with Alvin Curran (Mills College, Oakland, CA, USA)",
+				"year": 2017
+			}
+		],
+		"publications": [
+			{
+				"name": "Kappes, Greg. 2018. Navigating Instruction, Interface, and Sociality in Participatory Network Music. Mills College, MFA Thesis. Proquest Dissertations & Theses.",
+				"year": 2018
+			}
+		]
+	},
+	"education": [
+		{
+			"time": "2016-2018",
+			"degree": "MFA in Electronic Music and Recording Media, Mills College"
+		},
+		{
+			"time": "2012-2016",
+			"degree": "BA in Music, University of Pennsylvania, Magna Cum Laude"
+		}
+	],
+	"teaching": [
+		{
+			"time": "2020",
+			"position": "4-day Beginners' Max/MSP Workshop",
+			"place": "Akademie der Bildenden Künste Nürnberg, Nürnberg, DE"
+		},
+		{
+			"time": "2016-2018",
+			"position": "Technical and Teaching Assistant",
+			"place": "Center for Contemporary Music, Mills College, Oakland, CA, USA"
+		},
+		{
+			"time": "2016",
+			"position": "Tutor (Chemistry and Biology)",
+			"place": "Mills College, Oakland, CA, USA"
+		},
+		{
+			"time": "2014",
+			"position": "Tutor (Chemistry and Biology)",
+			"place": "University of Pennsylvania, Philadelphia, PA, USA"
+		}
+	]
+}

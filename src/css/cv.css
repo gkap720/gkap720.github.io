@@ -1,0 +1,29 @@
+#cv-page li, .education-item, .teaching-item {
+	font-family: 'Inconsolata', monospace;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    text-shadow: 1px 1px 5px #333;
+}
+.work-title, .time-range {
+	font-weight: 600;
+	letter-spacing: 4px;
+	background: linear-gradient(to right, red, blue);
+}
+.time-range {
+	display: inline-block;
+}
+#cv-page ul {
+	margin: 0 0.25rem;
+	padding-left: 1rem;
+}
+.cv-section {
+	margin-bottom: 1rem;
+}
+.education-item, .teaching-item {
+	padding-left: 0.5rem;
+	padding-top: 0.5rem;
+}
+h2.year {
+	color: white;
+	text-decoration: underline;
+}

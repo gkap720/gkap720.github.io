@@ -1,0 +1,68 @@
+#detail .img-responsive {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#detail .grid {
+    margin: 0 -0.5rem;
+    padding-bottom: 30px;
+}
+#detail .grid .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#detail .doc {
+    padding-bottom: 30px;
+    padding-left: 0;
+    flex-basis: 66%;
+}
+
+#detail .info {
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#detail #text {
+    font-size: 0.8rem;
+    font-family: 'Inconsolata', monospace;
+    line-height: 1.2;
+    text-align: justify;
+    color: white;
+    white-space: pre-line;
+    flex-basis: 33%;
+    text-shadow: 1px 1px 5px #333;
+}
+
+#detail .name {
+    font-size: 1.5rem;
+}
+#detail .gallery {
+    margin: 0.5rem;
+}
+#detail .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+}
+#detail .video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#gif {
+    max-height: 540;
+}
+@media (min-width:320px)  {
+    #detail #text {
+        padding-left: 0;
+    }
+}
+
+hr {
+    color: white;
+}
