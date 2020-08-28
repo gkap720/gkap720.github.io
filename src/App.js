@@ -43,7 +43,7 @@ class About extends React.Component {
     return (
       <div id="about-section">
         <div id="about-me" className="section">
-          <img src="https://s3.amazonaws.com/gkappes/images/greg_kappes.png" />
+          <img src="/images/digital_selfie.jpg" />
           <div className="about-text">
             <div className="tag-wrapper">
               <div className="tagline">

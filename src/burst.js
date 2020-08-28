@@ -37,7 +37,7 @@ export default function main(ctx) {
       if(system.particles.length > 0) {
         system.run();
       }
-      p5.image(pg, window.pageYOffset/4-window.innerHeight, 0);
+      p5.image(pg, window.pageYOffset/8-window.innerHeight, 0);
       lastScroll = window.pageYOffset;
       //sat += 0.000275;
       //bright += 0.0166;
@@ -46,7 +46,7 @@ export default function main(ctx) {
       p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
     }
     function burst(elt) {
-      var xpos = elt.offsetLeft - window.pageYOffset/4 + window.innerHeight;
+      var xpos = elt.offsetLeft - window.pageYOffset/8 + window.innerHeight;
       var ypos = elt.offsetTop - window.pageYOffset;
       var w = elt.width;
       var h = elt.height;

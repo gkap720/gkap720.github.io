@@ -10,7 +10,11 @@
 	justify-content: space-between;
 	text-shadow: 1px 1px 5px black;
 }
-
+#about-pic {
+	width: 100%;
+	height: 300px;
+	flex-basis: 40%;
+}
 .about-text {
 	flex-basis: 55%;
 	align-items: center;
@@ -20,7 +24,7 @@
 }
 
 #about-me img {
-	flex-basis: 40%;
+	flex-basis: 35%;
 }
 .disclaimer {
 	font-size: 0.7rem;
