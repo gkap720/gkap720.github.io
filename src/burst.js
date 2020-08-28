@@ -6,27 +6,39 @@ export default function main(ctx) {
   let self = ctx;
   return function(_p5) {
     let p5 = _p5;
+    let pg;
+    let frame = 0;
+    let lastScroll = 0;
     p5.setup = function() {
       p5.frameRate(30);
       p5.pixelDensity(1);
       var cnv = p5.createCanvas(p5.windowWidth, window.innerHeight);
       cnv.position(0,0);
-      cnv.style("z-index", "-1");
+      cnv.style("z-index", "1");
       cnv.style("position", "fixed");
       system = new ParticleSystem(p5.createVector(p5.width/2, 50));
+      pg = p5.createGraphics(p5.windowWidth+window.innerHeight, window.innerHeight);
       //image(img, 0,0);
     }
     p5.draw = function() {
       p5.colorMode("rgb");
+      frame++;
+      if(lastScroll == window.pageYOffset) {p5.background(0,0,0,40);}
       if(self.drawQueue) {
         self.drawQueue.forEach( (el) => {
-          burst(el.elt, el.scroll);
+          if(el.type == "burst") {
+            burst(el.elt, el.scroll);
+          } else if(el.type == "init") {
+            randBurst();
+          }
         })
         self.drawQueue = [];
       }
       if(system.particles.length > 0) {
         system.run();
       }
+      p5.image(pg, window.pageYOffset/4-window.innerHeight, 0);
+      lastScroll = window.pageYOffset;
       //sat += 0.000275;
       //bright += 0.0166;
     }
@@ -34,7 +46,7 @@ export default function main(ctx) {
       p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
     }
     function burst(elt) {
-      var xpos = elt.offsetLeft;
+      var xpos = elt.offsetLeft - window.pageYOffset/4 + window.innerHeight;
       var ypos = elt.offsetTop - window.pageYOffset;
       var w = elt.width;
       var h = elt.height;
@@ -43,6 +55,11 @@ export default function main(ctx) {
       p5.colorMode("rgb");
       var pageColor = p5.color(elt.getAttribute("burst"));
       var hsb = rgbToHsv(pageColor.levels[0], pageColor.levels[1], pageColor.levels[2]);
+      drawBurst(hsb, xStart, yStart, w, h);
+      burstOn = true;
+      //$(this.elt).css("visibility", "hidden");
+    }
+    function drawBurst(hsb, xStart, yStart, w, h) {
       p5.colorMode("hsb");
       var x, y, particle;
       let max = 7;
@@ -60,8 +77,12 @@ export default function main(ctx) {
           system.addParticle(particle);
         }
       }
-      burstOn = true;
-      //$(this.elt).css("visibility", "hidden");
+    }
+    function randBurst() {
+        let arr = [0,5,6,7,8,9];
+        //let arr = [0,1,2,3,4,5,6,7,8,9];
+        let hue = arr[Math.floor(Math.random()*arr.length)]*36;
+        drawBurst([hue, 100, 50], Math.random()*(window.innerWidth)+window.innerHeight, Math.random()*window.innerHeight, 100, 200);
     }
 
     function rgbToHsv(r, g, b) {
@@ -115,21 +136,20 @@ export default function main(ctx) {
 
     // Method to display
     Particle.prototype.display = function() {
-      let start = p5.millis();
-      p5.stroke(p5.color(0,0,0));
-      p5.strokeWeight(1);
-      p5.fill(this.color);
+      pg.stroke(p5.color(0,0,0));
+      pg.strokeWeight(1);
+      pg.fill(this.color);
       let wMult = 1;
       var w = Math.random()*10+5;
-      p5.rect(this.position[0], this.position[1], w*wMult, w*wMult);
+      pg.rect(this.position[0], this.position[1], w*wMult, w*wMult);
       w = Math.random()*5+5;
-      p5.rect(this.position[0]+p5.random(5,10), this.position[1], w*wMult, w*wMult);
+      pg.rect(this.position[0]+p5.random(5,10), this.position[1], w*wMult, w*wMult);
       w = Math.random()*5+3;
-      p5.rect(this.position[0], this.position[1]+Math.random()*5+5, w*wMult, w*wMult);
+      pg.rect(this.position[0], this.position[1]+Math.random()*5+5, w*wMult, w*wMult);
       w = Math.random()*5+5;
-      p5.rect(this.position[0]-p5.random(5,10), this.position[1]+2, w*wMult, w*wMult);
+      pg.rect(this.position[0]-p5.random(5,10), this.position[1]+2, w*wMult, w*wMult);
       w = Math.random()*5+5;
-      p5.rect(this.position[0]+2, this.position[1]-(Math.random()*5+5), w*wMult, w*wMult);
+      pg.rect(this.position[0]+2, this.position[1]-(Math.random()*5+5), w*wMult, w*wMult);
       /*p5.textSize(20);
       p5.text("greg!", this.position[0], this.position[1]);
       p5.text("!", this.position[0]+p5.random(5,20), this.position[1]);

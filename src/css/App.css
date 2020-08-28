@@ -2,6 +2,10 @@
   margin: 0 auto;
   width: 100%;
 }
+#root {
+  z-index: 3;
+  position: relative;
+}
 body {
   background: black;
   color: white;

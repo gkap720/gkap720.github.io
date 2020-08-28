@@ -33,6 +33,12 @@ const Navbar = (props) => {
 }
 
 class About extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount() {
+    this.props.fillPage(1000);
+  }
   render() {
     return (
       <div id="about-section">
@@ -90,8 +96,8 @@ const MaskedHearts = (props) => {
       <svg viewBox="0 0 58 10" width="100%" height="100%">
         <defs>  
              <linearGradient id="gradient">  
-               <stop offset="0" stop-color="blue" />  
-               <stop offset="1" stop-color="red" />  
+               <stop offset="0" stop-color="dodgerblue" />  
+               <stop offset="0.9" stop-color="red" />  
              </linearGradient>
              <mask id={`gradient-mask-${props.level}`}>  
               {
@@ -280,8 +286,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.movingText = React.createRef();
+    this.scrolling = false;
     this.drawQueue = [];
     this.addToQueue = this.addToQueue.bind(this);
+    this.fillPage = this.fillPage.bind(this);
     setInterval(function() {
         this.toggleClass(this.movingText.current, "shift");
     }.bind(this), 1000);
@@ -291,9 +299,10 @@ class App extends React.Component {
     setInterval(function() {
         this.toggleClass(this.movingText.current, "right");
     }.bind(this), 1600);
+  }
+  componentDidMount() {
     let sketch = new p5(MainSketch(this));
   }
-
   toggleClass(el, className) {
     if(!el) {
       return;
@@ -306,7 +315,13 @@ class App extends React.Component {
   }
 
   addToQueue(e) {
-    this.drawQueue.push({"elt": e.target});
+    this.drawQueue.push({"elt": e.target, "type": "burst"});
+  }
+
+  fillPage(initDelay) {
+    for(let i = 0; i < 8; i++) {
+      setTimeout(() => this.drawQueue.push({"type": "init"}), i*150+initDelay);
+    }
   }
 
   render() {
@@ -328,7 +343,7 @@ class App extends React.Component {
                 <CVPage />
               </Route>
               <Route path="/">
-                <About />
+                <About fillPage={this.fillPage} />
               </Route>
             </Switch>
           </div>
