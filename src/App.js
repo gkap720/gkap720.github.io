@@ -78,31 +78,78 @@ const SkillRow = (props) => {
     <div className="skill-row">
       <div className="skill-name">{props.skill.name}</div>
       <div className="skill-level">
-        <svg>
-           <defs>  
-             <linearGradient id="gradient">  
-               <stop offset="0" stop-color="blue" />  
-               <stop offset="1" stop-color="red" />  
-             </linearGradient>
-             <mask id={`gradient-mask-${props.skill.level}`}>  
-               {
-                  level.map((circle, i) => {
-                    //return circle ? <circle cy="16" cx={`${i*40+18}`} r="16" fill="white" /> : ""
-                    return circle ? <rect y="2" x={`${i*32+18}`} width="24" height="24" fill="white" /> : ""
-                  })
-                } 
-             </mask>  
-          </defs>
-          <rect x="0" y="0" fill="url(#gradient)" width="218px" height="100%" mask={`url(#gradient-mask-${props.skill.level})`} />
-          {
-            level.map((circle, i) => {
-              //return circle ? "" : <circle cy="16" cx={`${i*40+18}`} r="16" fill="#333" />
-              return circle ? "" : <rect y="2" x={`${i*32+18}`} width="24" height="24" fill="#333" />
-            })
-          } 
-        </svg>
+        <MaskedHearts level={props.skill.level} />
       </div>
+      
     </div>
+  )
+}
+const MaskedHearts = (props) => {
+  let level = new Array(5).fill(0).fill(1, 0, props.level);
+  return (
+      <svg viewBox="0 0 58 10" width="100%" height="100%">
+        <defs>  
+             <linearGradient id="gradient">  
+               <stop offset="0" stop-color="red" />  
+               <stop offset="1" stop-color="blue" />  
+             </linearGradient>
+             <mask id={`gradient-mask-${props.level}`}>  
+              {
+              level.map((level, i) => {
+                  return (
+                    level ? <path d={`M ${i*12+5} 9 l 4 -4 l 0 -1 l -2 -2 l -1 0 l -1 1 l -1 -1 l -1 0 l -2 2 l 0 1 l 4 4 Z`} fill="white" /> : ""
+                    )
+                 })
+              }
+             </mask>  
+        </defs>
+          <rect x="0" y="0" fill="url(#gradient)" width="58px" height="100%" mask={`url(#gradient-mask-${props.level})`} />  
+          {
+            level.map((level, i) => {
+                return (
+                  <path d={`M ${i*12+5} 9 l 4 -4 l 0 -1 l -2 -2 l -1 0 l -1 1 l -1 -1 l -1 0 l -2 2 l 0 1 l 4 4 Z`} stroke="white" fill="none" stroke-width="0.5px"/>
+                )
+            })
+          }
+        </svg>
+  )
+}
+const GradientHearts = (props) => {
+  let level = new Array(5).fill(0).fill(1, 0, props.level);
+  return (
+      <svg viewBox="0 0 58 10" width="100%" height="100%">
+        <defs>  
+             <linearGradient id="gradient">  
+               <stop offset="0" stop-color="red" />  
+               <stop offset="1" stop-color="blue" />  
+             </linearGradient>
+        </defs>  
+          {
+            level.map((level, i) => {
+                return (
+                  level ? <path d={`M ${i*12+5} 9 l 4 -4 l 0 -1 l -2 -2 l -1 0 l -1 1 l -1 -1 l -1 0 l -2 2 l 0 1 l 4 4 Z`} stroke="white" fill="url(#gradient)" stroke-width="0.5px"/> 
+                  : <path d={`M ${i*12+5} 9 l 4 -4 l 0 -1 l -2 -2 l -1 0 l -1 1 l -1 -1 l -1 0 l -2 2 l 0 1 l 4 4 Z`} stroke="white" fill="none" stroke-width="0.5px"/>
+                )
+            })
+          }
+        </svg>
+  )
+}
+const SkillBar = (props) => {
+  return (
+    <svg>
+         <defs>  
+           <linearGradient id="gradient">  
+             <stop offset="0" stop-color="red" />  
+             <stop offset="1" stop-color="blue" />  
+           </linearGradient>
+           <mask id={`gradient-mask-${props.level}`}>  
+             <rect x="0" y="0" fill="white" height="100%" width={`${Math.floor(props.level/5*218)}px`}></rect>
+           </mask>  
+        </defs>
+        <rect x="2" y="0" fill="url(#gradient)" width="218px" height="100%" mask={`url(#gradient-mask-${props.level})`} />
+        <rect x="2" y="0" fill="none" width="218px" height="100%" stroke="white" stroke-width="2px"/>
+    </svg>
   )
 }
 
