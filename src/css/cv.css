@@ -7,7 +7,7 @@
 .work-title, .time-range {
 	font-weight: 600;
 	letter-spacing: 4px;
-	background: linear-gradient(to right, red, blue);
+	background: linear-gradient(to right, blue, red);
 }
 .time-range {
 	display: inline-block;

@@ -90,14 +90,14 @@ const MaskedHearts = (props) => {
       <svg viewBox="0 0 58 10" width="100%" height="100%">
         <defs>  
              <linearGradient id="gradient">  
-               <stop offset="0" stop-color="red" />  
-               <stop offset="1" stop-color="blue" />  
+               <stop offset="0" stop-color="blue" />  
+               <stop offset="1" stop-color="red" />  
              </linearGradient>
              <mask id={`gradient-mask-${props.level}`}>  
               {
               level.map((level, i) => {
                   return (
-                    level ? <path d={`M ${i*12+5} 9 l 4 -4 l 0 -1 l -2 -2 l -1 0 l -1 1 l -1 -1 l -1 0 l -2 2 l 0 1 l 4 4 Z`} fill="white" /> : ""
+                    level ? <path d={`M ${i*12+5} 9 l 4 -4 l 0 -1 l -2 -2 l -1 0 l -1 1 l -1 -1 l -1 0 l -2 2 l 0 1 l 4 4 Z`} fill="white" id={"mask-" + i} transform-origin={`${i*12+5}px 5px`} /> : ""
                     )
                  })
               }

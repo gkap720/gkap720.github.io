@@ -1,7 +1,7 @@
 .emphasis {
   font-weight: 600;
   letter-spacing: 4px;
-  background: linear-gradient(to right, red, blue);
+  background: linear-gradient(to right, blue, red);
 }
 #about-me {
 	font-family: "Inconsolata", monospace;
@@ -62,4 +62,42 @@
 	font-family: "Inconsolata", monospace;
 	text-shadow: 1px 1px 5px #333;
 	font-size: 1.1rem;
+}
+#mask-0 {
+	animation-name: example;
+	animation-duration: 1.2s;
+	animation-fill-mode: backwards;
+	animation-timing-function: ease-in;
+}
+#mask-1 {
+	animation-name: example;
+	animation-duration: 1.2s;
+	animation-delay: 0.15s;
+	animation-fill-mode: backwards;
+	animation-timing-function: ease-in;
+}
+#mask-2 {
+	animation-name: example;
+	animation-duration: 1.2s;
+	animation-delay: 0.35s;
+	animation-fill-mode: backwards;
+	animation-timing-function: ease-in;
+}
+#mask-3 {
+	animation-name: example;
+	animation-duration: 1.2s;
+	animation-delay: 0.45s;
+	animation-fill-mode: backwards;
+	animation-timing-function: ease-in;
+}
+#mask-4 {
+	animation-name: example;
+	animation-duration: 1.2s;
+	animation-delay: 0.52s;
+	animation-fill-mode: backwards;
+	animation-timing-function: ease-in;
+}
+@keyframes example {
+  from {transform: scale(0.001); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
 }
