@@ -54,6 +54,9 @@ html {
 .inline-link {
   background: yellow;
   color: black;
+  text-shadow: none;
+  font-weight: 600;
+  letter-spacing: 4px;
 }
 .inline-link:hover {
   background: white;

@@ -1,0 +1,52 @@
+{
+	"projects": [
+		{
+			"slug": "autobahn",
+			"name": "Autobahn (Security Research Labs)",
+			"thumbnail": "main_dash.jpg",
+			"slideshow": [
+				"main_dash.jpg",
+				"issue_details.jpg",
+				"scan_history.jpg",
+				"comparison_industry.jpg"
+			],
+			"description": "I co-designed the interface for our vulnerability scanner app, implemented large parts of the UI, and provided guidance and support to others on the Frontend team. Throughout the project, I communicated with various stakeholders in a cross-functional team from management to marketing to developers. I was involved in data visualization as well as in crafting user stories and proposing new features. Though my focus was in the Frontend, I also implemented Backend features.",
+			"color": "#E63543"
+		},
+		{
+			"slug": "sigflo",
+			"name": "Signal Flow Festival",
+			"thumbnail": "front.jpg",
+			"slideshow": [
+				"front.jpg",
+				"front_with_player.jpg",
+				"detail.jpg"
+			],
+			"description": "meowmeowmeow",
+			"color": "#EEBBBB"
+		},
+		{
+			"slug": "pls",
+			"name": "pls don't(!) silence ur cellphones",
+			"thumbnail": "GregSF-5.jpg",
+			"slideshow": [
+				"GregSF.jpg",
+				"GregSF-2.jpg",
+				"GregSF-3.jpg",
+				"GregSF-4.jpg",
+				"GregSF-5.jpg"
+			],
+			"description": "meowmeowmeow",
+			"color": "#EEDD11"
+		},
+		{
+			"slug": "netwreckerz",
+			"name": "netwreckerz",
+			"thumbnail": "",
+			"slideshow": [
+			],
+			"description": "meowmeowmeow",
+			"color": "#DD22ab"
+		}
+	]
+}

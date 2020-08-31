@@ -11,10 +11,11 @@ import {HashLink as Link} from 'react-router-hash-link';
 import './css/App.css';
 import './css/detail.css';
 import './css/cv.css';
-import './css/about.css';
+import './css/about.scss';
 import {pages} from "./pages.json";
 import CV from "./cv.json";
 import Skills from "./skills.json";
+import Projects from "./projects.json";
 import MainSketch from "./burst.js";
 
 const Navbar = (props) => {
@@ -35,6 +36,7 @@ const Navbar = (props) => {
 class About extends React.Component {
   constructor(props) {
     super(props);
+    this.projects = Projects.projects;
   }
   componentDidMount() {
     this.props.fillPage(1000);
@@ -43,14 +45,14 @@ class About extends React.Component {
     return (
       <div id="about-section">
         <div id="about-me" className="section">
-          <img src="/images/digital_selfie.jpg" />
+          <div className="image-wrapper"><img id="about-image" src="/images/digital_selfie.jpg" /></div>
           <div className="about-text">
             <div className="tag-wrapper">
               <div className="tagline">
                 I'm a Fullstack Web Developer, Musician and Media Artist, especially passionate about crafting <span className="emphasis">interactive</span> & <span className="emphasis">accessible</span> user experiences. With a wide range of diverse experience from music-making to multimedia installation to Saas product design and implementation, I bring a unique skillset to every project.
               </div>
               <div className="disclaimer">
-                [This page is for my dev work, click over <Link className="inline-link" to="/works">here</Link> for the stuff that doesn't make me any money🙃]
+                [This page is for my dev work, click <Link className="inline-link" to="/works">here</Link> to see the fun stuff that doesn't make me any money🙃]
               </div>
             </div>
           </div>
@@ -72,6 +74,70 @@ class About extends React.Component {
         </div>
         <div id="projects" className="section">
           <h2 className="center-header">Projects</h2>
+          <div className="project-grid">
+            {this.projects.map((el) => <ProjectTile page={el} addToQueue={this.props.addToQueue} link={"projects/" + el.slug} prefix={`/images/projects/${el.slug}/`} />)}
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+
+const ProjectDetail = (props) => {
+  let { slug } = useParams();
+  let page = Projects.projects.find((el) => el.slug == slug);
+  return (
+    <div className="project-detail">
+      <h2>{page.name}</h2>
+      <div className="content">
+        <ImageCarousel images={page.slideshow} prefix={`/images/projects/${slug}/`}/>
+      </div>
+      <div className="project-description">{page.description}</div>
+    </div>
+  )
+}
+
+class ImageCarousel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tab: 0
+    }
+    this.container = React.createRef();
+    this.increment = this.increment.bind(this);
+    this.decrement = this.decrement.bind(this);
+  }
+  componentDidMount() {
+    this.width = this.container.current.offsetWidth;
+  }
+  offset() {
+    return {"transform": `translateX(-${this.state.tab*this.width}px)`}
+  }
+  decrement() {
+    this.setState(
+      {
+        tab: this.state.tab - 1 > 0 ? this.state.tab - 1 : 0
+      }
+    )
+  }
+  increment() {
+    this.setState(
+      {
+        tab: this.state.tab + 1 < this.props.images.length - 1 ? this.state.tab + 1 : this.props.images.length - 1
+      }
+    )
+  }
+  render() {
+    return (
+      <div className="carousel-wrapper" ref={this.container} >
+        <div className="image-carousel" style={this.offset()}>
+          {this.props.images.map((image) => <div className="slide"><img src={this.props.prefix + image} /></div>)}
+        </div>
+        <div className="carousel-button back" onClick={this.decrement}>
+          {"<"}
+        </div>
+        <div className="carousel-button forward" onClick={this.increment}>
+          {">"}
         </div>
       </div>
     )
@@ -132,7 +198,7 @@ const Works = (props) => {
       <Route path={match.path}>
         <div id="works" class="grid">
           <div class="wrapper">
-            {sorted.map((el) => <ProjectTile page={el} addToQueue={props.addToQueue} />)}
+            {sorted.map((el) => <ProjectTile page={el} addToQueue={props.addToQueue} link={"works/" + el.slug} prefix=""/>)}
           </div>
         </div>
       </Route>
@@ -143,10 +209,10 @@ const Works = (props) => {
 const ProjectTile = (props) => {
   return (
     <div class="project">
-        <Link to={"/works/" + props.page.slug}>
-          <img src={ props.page.thumbnail } class="img-responsive" burst={ props.page.color } onMouseEnter={props.addToQueue} />
+        <Link to={props.link}>
+          <img src={ props.prefix + props.page.thumbnail } class="img-responsive" burst={ props.page.color } onMouseEnter={props.addToQueue} />
           <div class="title">
-              { props.page.name + ", " + props.page.year}
+              { props.page.name + (props.page.year ? ", " + props.page.year : "")}
           </div>
         </Link>
     </div>
@@ -339,11 +405,14 @@ class App extends React.Component {
               <Route path="/works">
                 <Works addToQueue={this.addToQueue} />
               </Route>
+              <Route path="/projects/:slug">
+                <ProjectDetail />
+              </Route>
               <Route path="/cv">
                 <CVPage />
               </Route>
               <Route path="/">
-                <About fillPage={this.fillPage} />
+                <About fillPage={this.fillPage} addToQueue={this.addToQueue} />
               </Route>
             </Switch>
           </div>
