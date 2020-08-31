@@ -10,7 +10,7 @@
 				"scan_history.jpg",
 				"comparison_industry.jpg"
 			],
-			"description": "I co-designed the interface for our vulnerability scanner app, implemented large parts of the UI, and provided guidance and support to others on the Frontend team. Throughout the project, I communicated with various stakeholders in a cross-functional team from management to marketing to developers. I was involved in data visualization as well as in crafting user stories and proposing new features. Though my focus was in the Frontend, I also implemented Backend features.",
+			"description": "Autobahn is a vulnerability scanner designed with both small and large companies in mind. I co-designed the interface in tandem with our in-house UI designer, implemented large parts of the UI, and provided guidance and support to others on the Frontend team. Throughout the project, I communicated with various stakeholders in a cross-functional team from management to marketing to development. I was involved in data visualization as well as in crafting user stories and proposing new features. Though my focus was in the Frontend, I also implemented Backend features.",
 			"color": "#E63543"
 		},
 		{
@@ -22,7 +22,7 @@
 				"front_with_player.jpg",
 				"detail.jpg"
 			],
-			"description": "meowmeowmeow",
+			"description": "The website allows potential audience members to get detailed information about the Signal Flow festival and draws them in with an attractive UI and a floating music player which is functional in every part of the site. I built the website from the ground up and incorporated custom animations to align with the graphic design work by Seiyoung Jang. I was able to make a reactive, welcoming website while also meaningfully incorporating contributions of collaborators.",
 			"color": "#EEBBBB"
 		},
 		{
@@ -36,16 +36,16 @@
 				"GregSF-4.jpg",
 				"GregSF-5.jpg"
 			],
-			"description": "meowmeowmeow",
+			"description": "pls don't(!) silence ur cellphones is a multimedia performance which uses a web app to coordinate movement between a large audience. The work also makes extensive use of the WebAudio API to produce an immersive experience using only the audience members' cellphone speakers. The UI is a minimal single-page app which communicates directions to the audience in a direct and easy-to-read manner.",
 			"color": "#EEDD11"
 		},
 		{
-			"slug": "netwreckerz",
-			"name": "netwreckerz",
+			"slug": "netwreckerzzz",
+			"name": "netwreckerzzz",
 			"thumbnail": "",
 			"slideshow": [
 			],
-			"description": "meowmeowmeow",
+			"description": "netwreckerzzz is a network music piece using a web app as the centerpiece of the experience. Developed and composed in collaboration with Alexander Dubovoy, the piece brings the audience into the work by allowing the spectators to directly participate through surveys sent to their phones. The audience's responses then influence a visualizer created using p5.js which is interpreted as a score by an acoustic ensemble. The audience's cellphone speakers are also used to make sound using the WebAudio API.",
 			"color": "#DD22ab"
 		}
 	]

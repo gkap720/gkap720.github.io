@@ -8,7 +8,7 @@ import {
   useParams
 } from "react-router-dom";
 import {HashLink as Link} from 'react-router-hash-link';
-import './css/App.css';
+import './css/App.scss';
 import './css/detail.css';
 import './css/cv.css';
 import './css/about.scss';
@@ -76,6 +76,19 @@ class About extends React.Component {
           <h2 className="center-header">Projects</h2>
           <div className="project-grid">
             {this.projects.map((el) => <ProjectTile page={el} addToQueue={this.props.addToQueue} link={"projects/" + el.slug} prefix={`/images/projects/${el.slug}/`} />)}
+            <div class="project">
+                <Link to="/works">
+                  <div class="art-block">
+                    <div>I write a bunch of code for my ART, too ;) ----></div>
+                  </div>
+                </Link>
+            </div>
+          </div>
+        </div>
+        <div id="contact" className="section">
+          <h2 className="center-header">Contact</h2>
+          <div className="contact-text">
+            If you'd like to get in touch, shoot me an email at <a href="mailto:greg.m.kappes@gmail.com">greg.m.kappes@gmail.com</a>
           </div>
         </div>
       </div>
@@ -91,8 +104,8 @@ const ProjectDetail = (props) => {
       <h2>{page.name}</h2>
       <div className="content">
         <ImageCarousel images={page.slideshow} prefix={`/images/projects/${slug}/`}/>
+        <div className="project-description">{page.description}</div>
       </div>
-      <div className="project-description">{page.description}</div>
     </div>
   )
 }
@@ -129,15 +142,17 @@ class ImageCarousel extends React.Component {
   }
   render() {
     return (
-      <div className="carousel-wrapper" ref={this.container} >
-        <div className="image-carousel" style={this.offset()}>
-          {this.props.images.map((image) => <div className="slide"><img src={this.props.prefix + image} /></div>)}
-        </div>
+      <div className="carousel">
         <div className="carousel-button back" onClick={this.decrement}>
-          {"<"}
+          <div>{"<"}</div>
+        </div>
+        <div className="carousel-wrapper" ref={this.container} >
+          <div className="image-carousel" style={this.offset()}>
+            {this.props.images.map((image) => <div className="slide"><img src={this.props.prefix + image} /></div>)}
+          </div>
         </div>
         <div className="carousel-button forward" onClick={this.increment}>
-          {">"}
+          <div>{">"}</div>
         </div>
       </div>
     )
@@ -415,6 +430,11 @@ class App extends React.Component {
                 <About fillPage={this.fillPage} addToQueue={this.addToQueue} />
               </Route>
             </Switch>
+          </div>
+          <div className="footer">
+            <a href="https://github.com/gkap720" class="social-logo gh"/>
+            <a href="https://instagram.com/gregkappes" class="social-logo insta" />
+            <a href="https://linkedin.com/in/gregkappes" class="social-logo linkedin" />
           </div>
         </div>
       </Router>

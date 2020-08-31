@@ -34,7 +34,7 @@ html {
     width: 1100px;
   }
 }
-@media (width > 1440px) {
+@media (min-width: 1440px) {
   .App {
     width: 1440px;
   }
@@ -164,6 +164,7 @@ button {
 }
 .page-container {
   padding-top: 1rem;
+  min-height: 70vh;
 }
 #works {
   margin: 0 -0.5rem;
@@ -201,4 +202,42 @@ canvas {
   image-rendering: pixelated;
   -ms-interpolation-mode: nearest-neighbor;
   image-smoothing-enabled: false;
+}
+.footer {
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  .social-logo {
+    width: 50px;
+    height: 50px;
+    margin: 0 0.5rem;
+    background: white;
+    display: inline-block;
+    cursor: pointer;
+    &.gh {
+      -webkit-mask: url("/logos/gh_logo.svg") no-repeat center;
+      mask: url("/logos/gh_logo.svg") no-repeat center;
+      mask-size: contain;
+    }
+    &.insta {
+      -webkit-mask: url("/logos/insta.svg") no-repeat center;
+      mask: url("/logos/insta.svg") no-repeat center;
+      mask-size: contain;
+    }
+    &.linkedin {
+      -webkit-mask: url("/logos/linkedin.svg") no-repeat center;
+      mask: url("/logos/linkedin.svg") no-repeat center;
+      mask-size: contain;
+    }
+    &:hover {
+      background: yellow;
+      animation: bounce 0.12s ease-in;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+@keyframes bounce {
+  0% {transform: scale(1);}
+  70% {transform: scale(1.17);}
+  100% {transform: scale(1.1);}
 }
