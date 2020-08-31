@@ -432,9 +432,9 @@ class App extends React.Component {
             </Switch>
           </div>
           <div className="footer">
-            <a href="https://github.com/gkap720" class="social-logo gh"/>
-            <a href="https://instagram.com/gregkappes" class="social-logo insta" />
-            <a href="https://linkedin.com/in/gregkappes" class="social-logo linkedin" />
+            <a href="https://github.com/gkap720" target="_blank" class="social-logo gh"/>
+            <a href="https://instagram.com/gregkappes" target="_blank" class="social-logo insta" />
+            <a href="https://linkedin.com/in/gregkappes" target="_blank" class="social-logo linkedin" />
           </div>
         </div>
       </Router>
