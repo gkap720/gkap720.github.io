@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import {HashLink as Link} from 'react-router-hash-link';
 import './css/App.scss';
-import './css/detail.css';
+import './css/detail.scss';
 import './css/cv.css';
 import './css/about.scss';
 import {pages} from "./pages.json";

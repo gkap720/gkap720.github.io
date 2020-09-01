@@ -1,3 +1,10 @@
+@import "./App.scss";
+#detail {
+    margin: 0 0.5rem;
+    @media (min-width: $xs) {
+        margin: 0;
+    }
+}
 #detail .img-responsive {
     height: 100%;
     width: 100%;
@@ -9,7 +16,13 @@
 }
 #detail .grid .row {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    @media (min-width: $xs) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: $md) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 #detail .doc {
     padding-bottom: 30px;
@@ -21,6 +34,10 @@
     padding-top: 15px;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    @media (min-width: $md) {
+        flex-direction: row;
+    }
 }
 
 #detail #text {
