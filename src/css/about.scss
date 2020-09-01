@@ -151,6 +151,10 @@
 	}
 }
 .project-detail {
+	margin: 0 0.5rem;
+	@media (min-width: $xs) {
+		margin: 0;
+	}
 	h2 {
 		color: white;
 		font-size: 1.5rem;
@@ -165,6 +169,14 @@
 		max-width: 800px;
 		margin: 0 auto;
 		text-shadow: 1px 1px 5px #333;
+		a {
+			background: yellow;
+			color: black;
+			text-shadow: none;
+			&:hover {
+				background: white;
+			}
+		}
 	}
 }
 .carousel-wrapper {

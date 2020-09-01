@@ -5,8 +5,10 @@ import {
   Switch,
   Route,
   useRouteMatch,
-  useParams
+  useParams,
+  withRouter
 } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 import {HashLink as Link} from 'react-router-hash-link';
 import './css/App.scss';
 import './css/detail.scss';
@@ -17,6 +19,7 @@ import CV from "./cv.json";
 import Skills from "./skills.json";
 import Projects from "./projects.json";
 import MainSketch from "./burst.js";
+import ScrollToTop from "./components/scrollToTop.js";
 
 const Navbar = (props) => {
   return (
@@ -104,7 +107,7 @@ const ProjectDetail = (props) => {
       <h2>{page.name}</h2>
       <div className="content">
         <ImageCarousel images={page.slideshow} prefix={`/images/projects/${slug}/`}/>
-        <div className="project-description">{page.description}</div>
+        <ReactMarkdown className="project-description" source={page.description}></ReactMarkdown>
       </div>
     </div>
   )
@@ -148,7 +151,7 @@ class ImageCarousel extends React.Component {
         </div>
         <div className="carousel-wrapper" ref={this.container} >
           <div className="image-carousel" style={this.offset()}>
-            {this.props.images.map((image) => <div className="slide"><img src={this.props.prefix + image} /></div>)}
+            {this.props.images.map((image) => <a className="slide" href={this.props.prefix + image}><img src={this.props.prefix + image} /></a>)}
           </div>
         </div>
         <div className="carousel-button forward" onClick={this.increment}>
@@ -408,35 +411,37 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className="App">
-          <h1><Link to="/">Greg Kappes</Link></h1>
-          <h1 id="refresh" style={{"display": "none"}}>feel free to refresh the page........ ;)</h1>
-          <h2 id="description" ref={this.movingText}>
-            &%/+@#^Media_Artist\\\Improvisor///Creative_Coder-$^*/~!
-          </h2>
-          <Navbar />
-          <div className="page-container">
-            <Switch>
-              <Route path="/works">
-                <Works addToQueue={this.addToQueue} />
-              </Route>
-              <Route path="/projects/:slug">
-                <ProjectDetail />
-              </Route>
-              <Route path="/cv">
-                <CVPage />
-              </Route>
-              <Route path="/">
-                <About fillPage={this.fillPage} addToQueue={this.addToQueue} />
-              </Route>
-            </Switch>
+        <ScrollToTop>
+          <div className="App">
+            <h1><Link to="/">Greg Kappes</Link></h1>
+            <h1 id="refresh" style={{"display": "none"}}>feel free to refresh the page........ ;)</h1>
+            <h2 id="description" ref={this.movingText}>
+              &%/+@#^Media_Artist\\\Improvisor///Creative_Coder-$^*/~!
+            </h2>
+            <Navbar />
+            <div className="page-container">
+              <Switch>
+                <Route path="/works">
+                  <Works addToQueue={this.addToQueue} />
+                </Route>
+                <Route path="/projects/:slug">
+                  <ProjectDetail />
+                </Route>
+                <Route path="/cv">
+                  <CVPage />
+                </Route>
+                <Route path="/">
+                  <About fillPage={this.fillPage} addToQueue={this.addToQueue} />
+                </Route>
+              </Switch>
+            </div>
+            <div className="footer">
+              <a href="https://github.com/gkap720" target="_blank" class="social-logo gh"/>
+              <a href="https://instagram.com/gregkappes" target="_blank" class="social-logo insta" />
+              <a href="https://linkedin.com/in/gregkappes" target="_blank" class="social-logo linkedin" />
+            </div>
           </div>
-          <div className="footer">
-            <a href="https://github.com/gkap720" target="_blank" class="social-logo gh"/>
-            <a href="https://instagram.com/gregkappes" target="_blank" class="social-logo insta" />
-            <a href="https://linkedin.com/in/gregkappes" target="_blank" class="social-logo linkedin" />
-          </div>
-        </div>
+        </ScrollToTop>
       </Router>
     );
   }

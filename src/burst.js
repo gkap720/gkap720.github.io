@@ -9,15 +9,16 @@ export default function main(ctx) {
     let pg;
     let frame = 0;
     let lastScroll = 0;
+    let wiggleRoom = 100;
     p5.setup = function() {
       p5.frameRate(30);
       p5.pixelDensity(1);
-      var cnv = p5.createCanvas(p5.windowWidth, window.innerHeight);
+      var cnv = p5.createCanvas(p5.windowWidth, window.innerHeight+wiggleRoom);
       cnv.position(0,0);
       cnv.style("z-index", "1");
       cnv.style("position", "fixed");
       system = new ParticleSystem(p5.createVector(p5.width/2, 50));
-      pg = p5.createGraphics(p5.windowWidth+window.innerHeight, window.innerHeight);
+      pg = p5.createGraphics(p5.windowWidth+window.innerHeight, window.innerHeight+wiggleRoom);
       //image(img, 0,0);
     }
     p5.draw = function() {

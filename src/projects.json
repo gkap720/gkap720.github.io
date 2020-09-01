@@ -10,7 +10,7 @@
 				"scan_history.jpg",
 				"comparison_industry.jpg"
 			],
-			"description": "Autobahn is a vulnerability scanner designed with both small and large companies in mind. I co-designed the interface in tandem with our in-house UI designer, implemented large parts of the UI, and provided guidance and support to others on the Frontend team. Throughout the project, I communicated with various stakeholders in a cross-functional team from management to marketing to development. I was involved in data visualization as well as in crafting user stories and proposing new features. Though my focus was in the Frontend, I also implemented Backend features.",
+			"description": "Autobahn is a vulnerability scanner designed with both small and large companies in mind. I co-designed the interface in tandem with our in-house UI designer, implemented large parts of the UI, and provided guidance and support to others on the Frontend team. Throughout the project, I communicated with various stakeholders in a cross-functional team from management to marketing to development. I was involved in data visualization as well as in crafting user stories and proposing new features. Though my focus was in the Frontend, I also contributed significantly to the API. The live site can be found [here](https://autobahn.security).",
 			"color": "#E63543"
 		},
 		{
@@ -22,7 +22,7 @@
 				"front_with_player.jpg",
 				"detail.jpg"
 			],
-			"description": "The website allows potential audience members to get detailed information about the Signal Flow festival and draws them in with an attractive UI and a floating music player which is functional in every part of the site. I built the website from the ground up and incorporated custom animations to align with the graphic design work by Seiyoung Jang. I was able to make a reactive, welcoming website while also meaningfully incorporating contributions of collaborators.",
+			"description": "The website allows potential audience members to get detailed information about the Signal Flow festival and draws them in with an attractive UI and a floating music player which is functional in every part of the site. I built the website from the ground up and incorporated custom animations to align with the graphic design work by Seiyoung Jang. I was able to make a reactive, welcoming website while also meaningfully incorporating contributions of collaborators. You can visit the site [here](https://archive-2018.signal-flow.org).",
 			"color": "#EEBBBB"
 		},
 		{
@@ -42,10 +42,16 @@
 		{
 			"slug": "netwreckerzzz",
 			"name": "netwreckerzzz",
-			"thumbnail": "",
+			"thumbnail": "bar_1.png",
 			"slideshow": [
+				"UI.png",
+				"quiz.png",
+				"dashboard.png",
+				"normal_1.gif",
+				"bubble.gif",
+				"pie.gif"
 			],
-			"description": "netwreckerzzz is a network music piece using a web app as the centerpiece of the experience. Developed and composed in collaboration with Alexander Dubovoy, the piece brings the audience into the work by allowing the spectators to directly participate through surveys sent to their phones. The audience's responses then influence a visualizer created using p5.js which is interpreted as a score by an acoustic ensemble. The audience's cellphone speakers are also used to make sound using the WebAudio API.",
+			"description": "netwreckerzzz is a network music piece using a web app as the centerpiece of the experience. Developed and composed in collaboration with Alexander Dubovoy, the piece brings the audience into the work by allowing the spectators to directly participate through surveys sent to their phones. The audience's responses then influence a visualizer created using p5.js which is interpreted as a score by an acoustic ensemble. The audience's cellphone speakers are also used to make sound using the WebAudio API. You can find the code [here](https://github.com/ajdubovoy/homewreckerzzz).",
 			"color": "#DD22ab"
 		}
 	]
