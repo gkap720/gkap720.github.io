@@ -1,7 +1,3 @@
-[submodule "build"]
-	path = dist
-	url = https://github.com/gkap720/gkap720.github.io.git
-	branch = gh-pages
 [submodule "dist"]
 	path = dist
 	url = https://github.com/gkap720/gkap720.github.io.git
