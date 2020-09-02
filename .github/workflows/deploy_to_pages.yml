@@ -17,9 +17,8 @@ jobs:
       - run: CI=false npm run build
       - name: copy files to dist
         run: |
-          cd dist
-          rm -r *
-          cd ../build
+          rm -r dist/*
+          cd build
           cp -fr . ../dist
         shell: bash
       - name: commit dist
