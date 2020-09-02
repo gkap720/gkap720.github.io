@@ -6,19 +6,26 @@ on:
       - master
 
 jobs:
-  install:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: yarn install
+      - name: Cache modules
+        uses: actions/cache@v2
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-modules
+      - name: Install modules
+        if: steps.cache-modules.outputs.cache-hit != 'true'
+        run: yarn install
       - run: CI=false npm run build
       - name: Delete files in dist
         run: |
           cd dist
-          rm -rf .*
+          rm -rf *
         shell: bash
       - name: Copy files to dist
         run: |
@@ -30,6 +37,7 @@ jobs:
           author_name: Greg
           author_email: gkap720@gmail.com
           message: "Deploy"
-          cwd: './dist'  
+          cwd: './dist'
+          ref: 'gh-pages'  
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
