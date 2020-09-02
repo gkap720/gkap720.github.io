@@ -21,6 +21,7 @@ jobs:
           rm -r *
           cd ../build
           cp -fr . ../dist
+        shell: bash
       - name: commit dist
         uses: EndBug/add-and-commit@v4
         with:
