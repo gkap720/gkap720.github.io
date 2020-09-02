@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-          cmd: yarn install
+          run: yarn install
       - run: npm run build
       - name: copy files to dist
         run: |
