@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          submodules: true
       - uses: actions/setup-node@v1
         with:
           node-version: 12
@@ -25,12 +27,14 @@ jobs:
       - name: Delete files in dist
         run: |
           cd dist
-          rm -rf *
+          ls -la
         shell: bash
       - name: Copy files to dist
         run: |
           cd build
           cp -fr . ../dist
+          cd ../dist
+          ls -la
       - name: commit dist
         uses: EndBug/add-and-commit@v4
         with:
