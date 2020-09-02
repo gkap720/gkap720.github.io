@@ -1,4 +1,4 @@
 [submodule "build"]
 	path = build
-	url = ../gh-pages.git
+	url = https://github.com/gkap720/gkap720.github.io.git
 	branch = gh-pages
