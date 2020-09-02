@@ -16,7 +16,10 @@ jobs:
       - run: yarn install
       - run: CI=false npm run build
       - name: Delete files in dist
-        run: rm -r dist/*
+        run: |
+          mkdir trash
+          mv {dist/*,dist/.*} trash/
+          rm -r trash
         shell: bash
       - name: Copy files to dist
         run: |
