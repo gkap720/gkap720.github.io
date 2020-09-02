@@ -31,6 +31,8 @@ jobs:
         run: |
           cd build
           cp -fr . ../dist
+          cd ../dist
+          ls -la
       - name: commit dist
         uses: EndBug/add-and-commit@v4
         with:
