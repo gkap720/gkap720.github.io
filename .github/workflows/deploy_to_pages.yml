@@ -17,9 +17,8 @@ jobs:
       - run: CI=false npm run build
       - name: Delete files in dist
         run: |
-          mkdir trash
-          mv {dist/*,dist/.*} trash/
-          rm -r trash
+          cd dist
+          rm -rf .*
         shell: bash
       - name: Copy files to dist
         run: |
