@@ -52,7 +52,7 @@ class About extends React.Component {
           <div className="about-text">
             <div className="tag-wrapper">
               <div className="tagline">
-                I'm a Fullstack Web Developer, Musician and Media Artist, especially passionate about crafting <span className="emphasis">interactive</span> & <span className="emphasis">accessible</span> user experiences. With a wide range of diverse experience from music-making to multimedia installation to Saas product design and implementation, I bring a unique skillset to every project.
+                I'm a Fullstack Web Developer, Musician and Media Artist based in Berlin. I'm especially passionate about crafting <span className="emphasis">interactive</span> & <span className="emphasis">dynamic</span> user experiences. With a wide range of diverse experience from music-making to multimedia installation to Saas product design and implementation, I bring a unique skillset to every project.
               </div>
               <div className="disclaimer">
                 [This page is for my dev work, click <Link className="inline-link" to="/works">here</Link> to see the fun stuff that doesn't make me any money🙃]
