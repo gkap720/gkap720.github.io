@@ -91,7 +91,7 @@ class About extends React.Component {
         <div id="contact" className="section">
           <h2 className="center-header">Contact</h2>
           <div className="contact-text">
-            If you'd like to get in touch, shoot me an email at <a href="mailto:greg.m.kappes@gmail.com">greg.m.kappes@gmail.com</a>!!!??!!!!!!!!!
+            If you'd like to get in touch, shoot me an email at <a href="mailto:greg.m.kappes@gmail.com">greg.m.kappes@gmail.com</a>
           </div>
         </div>
       </div>
