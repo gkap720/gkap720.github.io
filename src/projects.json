@@ -1,6 +1,19 @@
 {
 	"projects": [
 		{
+			"slug": "autobahn",
+			"name": "Autobahn (Security Research Labs)",
+			"thumbnail": "main_dash.jpg",
+			"slideshow": [
+				"main_dash.jpg",
+				"issue_details.jpg",
+				"scan_history.jpg",
+				"comparison_industry.jpg"
+			],
+			"description": "Autobahn is a vulnerability scanner designed with both small and large companies in mind. I co-designed the interface in tandem with our in-house UI designer, implemented large parts of the UI, and provided guidance and support to others on the Frontend team. Throughout the project, I communicated with various stakeholders in a cross-functional team from management to marketing to development. I was involved in data visualization as well as in crafting user stories and proposing new features. Though my focus was in the Frontend, I also contributed significantly to the API. The live site can be found [here](https://autobahn.security).",
+			"color": "#E63543"
+		},
+		{
 			"slug": "sigflo",
 			"name": "Signal Flow Festival",
 			"thumbnail": "front.jpg",
