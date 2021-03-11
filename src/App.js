@@ -410,7 +410,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <HashRouter>
+      <Router>
         <ScrollToTop>
           <div className="App">
             <h1><Link to="/">Greg Kappes</Link></h1>
@@ -442,7 +442,7 @@ class App extends React.Component {
             </div>
           </div>
         </ScrollToTop>
-      </HashRouter>
+      </Router>
     );
   }
 }
