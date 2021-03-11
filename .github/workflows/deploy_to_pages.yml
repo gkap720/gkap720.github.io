@@ -36,7 +36,7 @@ jobs:
           cd ../dist
       - name: Make 404
         run: |
-          cp dist/index.html 404.html
+          cp dist/index.html dist/404.html
       - name: commit dist
         uses: EndBug/add-and-commit@v4
         with:
