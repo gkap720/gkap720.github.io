@@ -3,12 +3,12 @@
 		{
 			"slug": "autobahn",
 			"name": "Autobahn (Security Research Labs)",
-			"thumbnail": "main_dash.jpg",
+			"thumbnail": "main_dash_small.webp",
 			"slideshow": [
-				"main_dash.jpg",
-				"issue_details.jpg",
-				"scan_history.jpg",
-				"comparison_industry.jpg"
+				"main_dash.webp",
+				"issue_details.webp",
+				"scan_history.webp",
+				"comparison_industry.webp"
 			],
 			"description": "Autobahn is a vulnerability scanner designed with both small and large companies in mind. I co-designed the interface in tandem with our in-house UI designer, implemented large parts of the UI, and provided guidance and support to others on the Frontend team. Throughout the project, I communicated with various stakeholders in a cross-functional team from management to marketing to development. I was involved in data visualization as well as in crafting user stories and proposing new features. Though my focus was in the Frontend, I also contributed significantly to the API. The live site can be found [here](https://autobahn.security).",
 			"color": "#E63543"
@@ -16,11 +16,11 @@
 		{
 			"slug": "sigflo",
 			"name": "Signal Flow Festival",
-			"thumbnail": "front.jpg",
+			"thumbnail": "front_small.webp",
 			"slideshow": [
-				"front.jpg",
-				"front_with_player.jpg",
-				"detail.jpg"
+				"front.webp",
+				"front_with_player.webp",
+				"detail.webp"
 			],
 			"description": "The website allows potential audience members to get detailed information about the Signal Flow festival and draws them in with an attractive UI and a floating music player which is functional in every part of the site. I built the website from the ground up and incorporated custom animations to align with the graphic design work by Seiyoung Jang. I was able to make a reactive, welcoming website while also meaningfully incorporating contributions of collaborators. You can visit the site [here](https://archive-2018.signal-flow.org).",
 			"color": "#EEBBBB"
@@ -28,13 +28,13 @@
 		{
 			"slug": "pls",
 			"name": "pls don't(!) silence ur cellphones",
-			"thumbnail": "GregSF-5.jpg",
+			"thumbnail": "GregSF-5_small.webp",
 			"slideshow": [
-				"GregSF.jpg",
-				"GregSF-2.jpg",
-				"GregSF-3.jpg",
-				"GregSF-4.jpg",
-				"GregSF-5.jpg"
+				"GregSF.webp",
+				"GregSF-2.webp",
+				"GregSF-3.webp",
+				"GregSF-4.webp",
+				"GregSF-5.webp"
 			],
 			"description": "pls don't(!) silence ur cellphones is a multimedia performance which uses a web app to coordinate movement between a large audience. The work also makes extensive use of the WebAudio API to produce an immersive experience using only the audience members' cellphone speakers. The UI is a minimal single-page app which communicates directions to the audience in a direct and easy-to-read manner.",
 			"color": "#EEDD11"
@@ -42,11 +42,11 @@
 		{
 			"slug": "netwreckerzzz",
 			"name": "netwreckerzzz",
-			"thumbnail": "bar_1.png",
+			"thumbnail": "bar_1_small.webp",
 			"slideshow": [
-				"UI.png",
-				"quiz.png",
-				"dashboard.png",
+				"UI.webp",
+				"quiz.webp",
+				"dashboard.webp",
 				"normal_1.gif",
 				"bubble.gif",
 				"pie.gif"

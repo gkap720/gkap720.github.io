@@ -163,7 +163,6 @@ class ImageCarousel extends React.Component {
 }
 
 const SkillRow = (props) => {
-  let level = new Array(5).fill(0).fill(1, 0, props.skill.level);
   return (
     <div className="skill-row">
       <div className="skill-name">{props.skill.name}</div>
@@ -228,7 +227,11 @@ const ProjectTile = (props) => {
   return (
     <div class="project">
         <Link to={props.link}>
-          <img src={ props.prefix + props.page.thumbnail } class="img-responsive" burst={ props.page.color } onMouseEnter={props.addToQueue} />
+          <img 
+            src={ props.prefix + props.page.thumbnail + ".webp" } 
+            class="img-responsive" burst={ props.page.color } 
+            onMouseEnter={props.addToQueue} 
+          />
           <div class="title">
               { props.page.name + (props.page.year ? ", " + props.page.year : "")}
           </div>
@@ -275,7 +278,7 @@ const WorkDetail = (props) => {
                 { page.images.map(function(image) { 
                     return (
                       <div class="gallery">
-                        <a href={`/images/${image}`}><img src={`/images/${image}`} class="img-responsive" /></a>
+                        <a href={`/images/${image}.webp`}><img src={`/images/${image}_small.webp`} class="img-responsive" /></a>
                       </div>
                     )
                   })
@@ -416,7 +419,7 @@ class App extends React.Component {
             <h1><Link to="/">Greg Kappes</Link></h1>
             <h1 id="refresh" style={{"display": "none"}}>feel free to refresh the page........ ;)</h1>
             <h2 id="description" ref={this.movingText}>
-              &%/+@#^Media_Artist\\\Improvisor///Creative_Coder-$^*/~!
+              &%/+@#^Fullstack_Developer\\\Data_Scientist///Creative_Coder-$^*/~!
             </h2>
             <Navbar />
             <div className="page-container">
